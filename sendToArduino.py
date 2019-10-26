@@ -3,7 +3,7 @@ import serial
 from config import *
 #setup arduino connection
 
-def send_to_arduino(command="No Val"):
+def send_to_arduino(command):
     #import serial
     ser = serial.Serial(port_arduino)  # open serial port COM4 FOR ERIC
     print(ser.name)         # check which port was really used
