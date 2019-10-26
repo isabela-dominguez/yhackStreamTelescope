@@ -1,6 +1,6 @@
-import twitchstream.chat 
-username="asdfjhaslkdfhj"
+import twitchstream
+username="Mr_Krobe"
 oauth="oauth:mx2edonm7rifr3alyc1rachs4w5lph"
-
-stream=twitchstream.chat.TwitchChatStream(username, oauth, False)
+from twitchstream.chat import TwitchChatStream
+res=TwitchChatStream(username, oauth, False)
 stream.connect()
