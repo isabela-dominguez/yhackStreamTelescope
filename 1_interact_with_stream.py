@@ -4,16 +4,12 @@ import logging
 from emoji import demojize
 import re
 from sendToArduino import *
+from config import *
 
 #--------------- STREAM twitch using SOCKETS
 # source: https://www.learndatasci.com/tutorials/how-stream-text-data-twitch-sockets-python/
 
-# parameters 
-server = 'irc.chat.twitch.tv'
-port = 6667
-nickname = 'is1bela'
-token = 'oauth:yb5y1pc3eeuncy1y5hjms04w7irew7'
-channel = '#mr_krobe'
+
 
 def main():
     # socket initialization 
