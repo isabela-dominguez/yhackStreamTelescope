@@ -23,12 +23,12 @@ void loop()
   {
     //read value
     String command = Serial.readStringUntil(';');
-    tiltServo.write(175);
+    //tiltServo.write(175);
     delay(500);
     //is it a move command?
   if (command == "move"){
       //get coordinates
-      tiltServo.write(135);
+      //tiltServo.write(135);
       delay(500);
       x =Serial.readStringUntil(';').toInt();
       y =Serial.readStringUntil(';').toInt();

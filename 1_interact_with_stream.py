@@ -12,7 +12,7 @@ from config import *
 planets = {"mercury": "100,28",
             "venus": "124,34", 
             "mars": "90,32",
-            "jupyter": "40,50",
+            "jupiter": "40,50",
             "saturn": "130,60",
             "uranus": "112,70",
             "neptune": "123,80"}
@@ -54,6 +54,7 @@ def main():
                             #send_to_arduino(x_coor)
                             s = "move;"+ x_coor + ";" + y_coor + ";"
                             print(s)
+                            send_to_arduino(s)
 
 
                         
@@ -72,6 +73,8 @@ def main():
                             #send_to_arduino(x_coor)
                             s = "planet;"+ x_coor + ";" + y_coor + ";"
                             print(s)
+                            send_to_arduino(s)
+
                            
 
                         #print(message)
