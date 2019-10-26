@@ -3,6 +3,7 @@ import socket
 import logging
 from emoji import demojize
 import re
+from sendToArduino import *
 
 #--------------- STREAM twitch using SOCKETS
 # source: https://www.learndatasci.com/tutorials/how-stream-text-data-twitch-sockets-python/
@@ -27,13 +28,14 @@ def main():
             resp = sock.recv(2048).decode('utf-8')
 
             if resp.startswith('PING'):
-                # sock.send("PONG :tmi.twitch.tv\n".encode('utf-8'))
                 sock.send("PONG\n".encode('utf-8'))
             elif len(resp) > 0:
                 if "PRIVMSG" in resp: 
                     username, channel_from, message = re.search(':(.*)\!.*@.*\.tmi\.twitch\.tv PRIVMSG #(.*) :(.*)', demojize(resp)).groups()
                     message = message.replace('\r', '')
                     print(message)
+                    send_to_arduino(message)
+                    #sending it to the arduino
 
 
     except KeyboardInterrupt:
