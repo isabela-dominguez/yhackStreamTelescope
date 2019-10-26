@@ -8,4 +8,6 @@ https://python-twitch-stream.readthedocs.io/en/latest/modules/chat.html looks ve
 
 2.Send inputs to arduino
 3.Receive on Arduino Side
-4.Move stepper motors
+4.Move stepper motors 
+
+HELLO
