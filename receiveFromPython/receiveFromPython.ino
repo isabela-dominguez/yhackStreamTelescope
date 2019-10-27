@@ -13,7 +13,7 @@ int incoming[2];
 void setup()
 {
   // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
+  Serial.begin(115200);
   tiltServo.attach(tiltServoPin);
   panServo.attach(panServoPin);
   
