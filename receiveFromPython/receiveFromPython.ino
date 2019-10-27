@@ -15,6 +15,8 @@ void setup()
 // the loop routine runs over and over again forever:
 void loop()
 {
+  int x;
+  int y;
   //read from serial
   //if a command is found in the serial buffer
   if (Serial.available() > 0)
@@ -22,17 +24,17 @@ void loop()
     //read value
     String command = Serial.readStringUntil(';');
     tiltServo.write(175);
-    sleep(500)
+    delay(500);
     //is it a move command?
-  if (command.compare("move"){
+  if (command == "move"){
       //get coordinates
       tiltServo.write(135);
-      sleep(500)
-      x = int(Serial.readStringUntil(';'));
-      y = int(Serial.readStringUntil(';'));
+      delay(500);
+      x =Serial.readStringUntil(';').toInt();
+      y =Serial.readStringUntil(';').toInt();
+      moveServo(x,y);
   }
   //output to servo motors
-  moveServo(x,y);
   }
   delay(100); // delay in between reads for stability
 }
@@ -41,15 +43,15 @@ void moveServoRelative(int x, int y)
 {
   panDegree += x;
   tiltDegree += y;
-  panServo(panDegree);
-  tiltServo(tiltDegree);
+  panServo.write(panDegree);
+  tiltServo.write(tiltDegree);
 }
 void moveServo(int x, int y)
 {
   panDegree = x;
   tiltDegree = y;
-  panServo(panDegree);
-  tiltServo(tiltDegree);
+  panServo.write(panDegree);
+  tiltServo.write(tiltDegree);
 }
 //void serialEvent() {
 //}
