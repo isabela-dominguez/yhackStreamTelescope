@@ -47,14 +47,14 @@ def main():
                             coor = message.lstrip("telescope move")
                             x_end = coor.find(",")
                             x_coor = coor[0:x_end]
-                            #send_to_arduino(x_coor)
+                            send_to_arduino(x_coor)
 
                             y_coor = coor[x_end+1:]
                             y_coor = y_coor.strip()
-                            #send_to_arduino(x_coor)
-                            s = "move;"+ x_coor + ";" + y_coor + ";"
-                            print(s)
-                            send_to_arduino(s)
+                            send_to_arduino(y_coor)
+                            #s = "move;"+ x_coor + ";" + y_coor + ";"
+                            #print(s)
+                            #send_to_arduino(s)
 
 
                         
@@ -66,14 +66,15 @@ def main():
                             planet_arduino_coors= planet_arduino_coors.replace('(', '').replace(')', '')
                             x_end = planet_arduino_coors.find(",")
                             x_coor = planet_arduino_coors[0:x_end]
-                            #send_to_arduino(x_coor)
+                            send_to_arduino(x_coor)
 
                             y_coor = planet_arduino_coors[x_end+1:]
                             y_coor = y_coor.strip()
+                            send_to_arduino(y_coor)
+                            #s = "planet;"+ x_coor + ";" + y_coor + ";"
+                            #print(s)
                             #send_to_arduino(x_coor)
-                            s = "planet;"+ x_coor + ";" + y_coor + ";"
-                            print(s)
-                            send_to_arduino(s)
+                            #send_to_arduino(y_coor)
 
                            
 
