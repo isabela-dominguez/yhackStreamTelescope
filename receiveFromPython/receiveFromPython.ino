@@ -8,7 +8,7 @@ int tiltDegree = 90;
 void setup()
 {
   // initialize serial communication at 9600 bits per second:
-  Serial.begin(9600);
+  Serial.begin(115200);
   tiltServo.attach(tiltServoPin);
   panServo.attach(panServoPin);
 }
@@ -23,12 +23,12 @@ void loop()
   {
     //read value
     String command = Serial.readStringUntil(';');
-    tiltServo.write(175);
+    //tiltServo.write(175);
     delay(500);
     //is it a move command?
   if (command == "move"){
       //get coordinates
-      tiltServo.write(135);
+      //tiltServo.write(135);
       delay(500);
       x =Serial.readStringUntil(';').toInt();
       y =Serial.readStringUntil(';').toInt();
